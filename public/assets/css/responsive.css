@@ -1,0 +1,60 @@
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+ .main2-right {
+  float: right;
+  width: calc( 100% - 68% );
+}
+.main-left {
+  width: 70%;
+}
+}
+
+
+@media all and (max-width:991px){
+.main2-right {
+  display: none;
+}
+.main-left {
+  width: 100%;
+  display: block;
+}
+}
+
+
+
+@media (max-width: 767px) {
+
+
+}
+
+
+@media all and (max-width:575px){
+
+.card-3d-wrap {
+  width: 470px;
+  height: 500px;
+  margin-top: 40px;
+}
+
+.center-wrap {
+  padding: 0px 35px;
+
+}
+.main-left {
+  padding-top: 110px;
+}
+}
+  
+@media all and (max-width:490px){
+
+.card-3d-wrap {
+  width: 313px;
+  height: 490px;
+  margin-top: 40px;
+}
+.center-wrap {
+  padding: 0px 30px;
+
+}
+}  
+  
