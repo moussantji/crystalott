@@ -23,12 +23,6 @@
             </div>
 
             <div class="col-lg-6">
-
-                <div class="mb-3">
-                    <label for="image" class="form-label">Image</label>
-                    <input type="text" id="image" name="image" class="form-control" placeholder="Post image"
-                        value="{{ $post->image }}" required autofocus autocomplete="off">
-                </div>
                 <input type="hidden" id="user" name="user_id" class="form-control"
                         value="{{ $post->user_id }}" required autofocus autocomplete="off">
 

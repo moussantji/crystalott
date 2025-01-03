@@ -647,7 +647,7 @@
                         </div>
                         <div class="faq-one__video"
                             style="background-image: url(assets/images/resources/faq-1-video.jpg);">
-                            <a href="https://www.youtube.com/watch?v=h9MbznbxlLc" class="video-popup">
+                            <a href="https://www.youtube.com/watch?v=MI1nxoQ-rM0" class="video-popup">
                                 <i class="fa fa-play"></i>
                                 <i class="ripple"></i>
                             </a>
