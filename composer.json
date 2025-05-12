@@ -10,8 +10,7 @@
         "laravel/tinker": "^2.9",
         "league/glide": "^2.3",
         "league/glide-symfony": "^2.0",
-        "paypal/paypal-server-sdk": "^0.6.1",
-        "paypal/rest-api-sdk-php": "^1.6"
+        "paypal/paypal-server-sdk": "^0.6.1"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.14",
