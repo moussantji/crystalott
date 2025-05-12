@@ -53,6 +53,10 @@ class Post extends Model
     public function getShortImageUrl()
     {
         $maxLength = 40;
+        if($this->getPhoto() === null)
+        {
+            return 'pas de photo';
+        }
         return strlen($this->getPhoto()->getImageUrl()) > $maxLength
             ? substr($this->getPhoto()->getImageUrl(), 0, $maxLength - 3) . '...'
             : $this->getPhoto()->getImageUrl();

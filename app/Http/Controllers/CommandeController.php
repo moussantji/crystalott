@@ -68,6 +68,6 @@ class CommandeController extends Controller
 
         session()->regenerate();
 
-        return to_route('panier');
+        return to_route('welcome')->with('email_sent', true);
     }
 }

@@ -37,7 +37,6 @@ class PostController extends Controller
 
     public function store(BlogRequest $request)
     {
-
         // Création de l'article
         $post = Post::create($request->validated());
         $post->attachfiles($request->validated('pictures'));
@@ -53,15 +52,10 @@ class PostController extends Controller
         return view('posts.edit', compact('post', 'categories'));
     }
 
-    public function update(Request $request, Post $post)
+    public function update(BlogRequest $request, Post $post)
     {
-        // Validation
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'content' => 'required',
-            'category_id' => 'required|exists:categories,id',
-        ]);
 
+        $post->attachfiles($request->validated('pictures'));
         // Mise à jour de l'article
         $post->update($request->all());
 
@@ -77,6 +71,6 @@ class PostController extends Controller
     public function blogimage_destroy(BlogsImage $blogimage)
     {
         $blogimage->delete();
-        return to_route('posts.index')->with('success', 'the image is deleted');
+        return redirect()->back();
     }
 }

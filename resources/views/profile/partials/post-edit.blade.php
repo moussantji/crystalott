@@ -1,6 +1,6 @@
 <div class="card-body">
     <div class="row">
-        <form action="{{ route('posts.update', $post->id) }}" method="POST">
+        <form action="{{ route('posts.update', $post->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="col-lg-6">
@@ -38,6 +38,13 @@
                         <option value="{{ $category->id }}" {{ $category->id == $post->category_id ? 'selected' : '' }}>{{ $category->name }}</option>
                         @endforeach
                    </select>
+                </div>
+
+            </div>
+            <div class="col-lg-6 mb-3">
+                <!-- File Upload -->
+                <div class="fallback mt-3">
+                    <input id="pictures" name="pictures[]" type="file" />
                 </div>
 
             </div>

@@ -53,9 +53,6 @@
             </div>
             <div class="col-lg-6">
 
-            </div>
-            <div class="col-lg-6">
-
                 <x-primary-button class="btn btn-success mt-2">{{ __('Save') }}</x-primary-button>
 
             </div>

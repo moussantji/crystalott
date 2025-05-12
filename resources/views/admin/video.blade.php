@@ -39,7 +39,6 @@
                                             <th>Videos</th>
                                             <th>Link</th>
                                             <th>Star</th>
-                                            <th>ID</th>
                                             <th>Durations</th>
                                             <th>Action</th>
                                         </tr>
@@ -73,7 +72,6 @@
                                                 </td>
                                                 <td>{{ $movie->link }}</td>
                                                 <td>{{ $movie->star }}</td>
-                                                <td>{{ $movie->id }}</td>
                                                 <td>{{ $movie->formattedtime() }}</td>
                                                 <td>
                                                     <div class="d-flex gap-2">

@@ -86,7 +86,7 @@ Route::middleware(['auth','role:admin'])->group(function () use ($idRegex) {
     Route::get('/admin/commandes/{commande}', [AdminComtroller::class, 'commande_detail'])->name('admin.commande.show')->where([
         'commande' => $idRegex
     ]);
-    Route::delete('picture/{blogimage}', [PostController::class, 'blogimage_destroy'])->name('admin.blog.destroy')->where([
+    Route::delete('blogimage/{blogimage}', [PostController::class, 'blogimage_destroy'])->name('admin.blog.destroy')->where([
         'blogimage' => $idRegex
     ]);
     Route::resource('/admin/posts', PostController::class)->except('show');

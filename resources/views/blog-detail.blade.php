@@ -10,7 +10,7 @@
                 <div class="col-lg-8">
                     <div class="blog-details__content">
                         <div class="blog-details__image">
-                            <img src="{{ $post->image }}" alt="ienet">
+                            <img src="{{ ($post->getPhoto() === null) ? asset('assets/images/blog/blog-1-1.png') : $post->getPhoto()->getImageUrl(770,400)  }}" alt="ienet">
                             <div class="blog-details__image__date">{{ $post->created_at->format('M') }},
                                 {{ $post->created_at->format('d') }}</div>
                         </div><!-- /.blog-card__image -->
@@ -95,7 +95,7 @@
                                     @foreach ($posts as $last)
                                         <li class="sidebar__posts__item">
                                             <div class="sidebar__posts__image">
-                                                <img src="{{ asset('assets/images/blog/lp-1-1.jpg') }}" alt="ienet">
+                                                <img src="{{ ($last->getPhoto() === null) ? asset('assets/images/blog/lp-1-1.jpg') : $last->getPhoto()->getImageUrl(80,84) }}" alt="ienet">
                                             </div><!-- /.sidebar__posts__image -->
                                             <div class="sidebar__posts__content">
                                                 <p class="sidebar__posts__meta"><i class="fas fa-user-alt"></i>by Admin</p>

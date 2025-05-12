@@ -876,10 +876,10 @@
                     <div class="item">
                         <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='00ms'>
                             <div class="blog-card__image">
-                                <img src="assets/images/blog/blog-1-1.png"
-                                    alt="Cupidatat Nonproident, Sunt in Culpa qui Officia Deserunt">
-                                <img src="assets/images/blog/blog-1-1.png"
-                                    alt="Cupidatat Nonproident, Sunt in Culpa qui Officia Deserunt">
+                                <img src="{{($post->getPhoto() === null) ? asset('assets/images/blog/blog-1-1.png') : $post->getPhoto()->getImageUrl(330,267) }}"
+                                    alt="{{ $post->title }}">
+                                <img src="{{ ($post->getPhoto() === null) ? asset('assets/images/blog/blog-1-1.png') : $post->getPhoto()->getImageUrl(330,267) }}"
+                                    alt="{{ $post->title }}">
                                 <a href="{{ route('blog', ['slug' => $post->getslug(), 'id' => $post]) }}"
                                     class="blog-card__image__link"><span class="sr-only">{{ $post->title }}</span>
                                     <!-- /.sr-only --></a>
@@ -1126,7 +1126,7 @@
             <ul class="sidebar-one__info">
                 <li>
                     <span class="fas fa-map-marker-alt"></span>
-                    27, Dhaka London City Dhaka, Bangladesh
+                    +1 (672) 538-4823
                 </li>
                 <li>
                     <span class="fas fa-clock"></span>
@@ -1134,7 +1134,7 @@
                 </li>
                 <li>
                     <span class="fas fa-envelope"></span>
-                    <a href="https://wa.me/16725384823">+1 (672) 538-4823</a>
+                    <a href="mailto:info@crystalott.net">info@crystalott.net</a>
                 </li>
             </ul>
             <div class="sidebar-one__social">

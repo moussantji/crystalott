@@ -26,7 +26,7 @@ class OrderConfirmationMail extends Mailable
         return $this->subject('Order Confirmation - IPTV Service')
                     ->view('emails.orderConfirmation')
                     ->with([
-                        'orderId' => $this->order->id,
+                        'orderId'=> $this->order->id,
                         'name' => $this->order->nom,
                         'paymentMethod' => $this->order->payment_method,
                         'total' => $this->order->total, // Assure-toi que l'attribut existe

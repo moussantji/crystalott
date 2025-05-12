@@ -9,7 +9,8 @@
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/favicons/apple-touch-icon.png') }}" />
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/favicons/favicon-32x32.png') }}" />
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicons/favicon-16x16.png') }}" />
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="{{ asset('assets/images/favicons/favicon-16x16.png') }}" />
     <link rel="manifest" href="{{ asset('assets/images/favicons/site.webmanifest') }}" />
     <meta name="description"
         content="Crystalotte.net is an IPTV website. We especially provide Online TV, Cable Television, Online Cinema and Movies, TV store, Digital TV, IPTV, websites." />
@@ -38,11 +39,14 @@
         .image-gallery img {
             width: 100%;
             height: auto;
-            border-radius: 8px; /* Coins arrondis */
+            border-radius: 8px;
+            /* Coins arrondis */
         }
     </style>
     <!-- template styles -->
     <link rel="stylesheet" href="{{ asset('assets/css/ienet.css') }}" />
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @vite('resources/js/app.js')
 </head>
 
@@ -83,7 +87,8 @@
                         </a><!-- /.search-toggler -->
                         <a href="{{ route('panier') }}" class="main-header__cart">
                             <i class="icon-cart" aria-hidden="true"></i>
-                            <span class='badge badge-warning' id='lblCartCount'>{{ $paniers->sum(fn($p) => $p->quantite) }}</span>
+                            <span class='badge badge-warning'
+                                id='lblCartCount'>{{ $paniers->sum(fn($p) => $p->quantite) }}</span>
                             <span class="sr-only">Cart</span>
                         </a><!-- /.cart-toggler -->
                         <div class="main-header__call">
@@ -99,6 +104,16 @@
 
         @yield('content')
 
+        @if (session('email_sent'))
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'E-mail envoyé',
+                    text: 'Nous vous enverrons un email contenant les informations de paiement sous peu.',
+                    confirmButtonText: 'OK'
+                });
+            </script>
+        @endif
         <script src="{{ asset('assets/vendors/jquery/jquery-3.7.0.min.js') }}"></script>
         <script src="{{ asset('assets/vendors/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ asset('assets/vendors/bootstrap-select/bootstrap-select.min.js') }}"></script>
